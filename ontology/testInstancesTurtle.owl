@@ -1,0 +1,31 @@
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl:    <http://www.w3.org/2003/11/swrl#> .
+@prefix protege:  <http://protege.stanford.edu/plugins/owl/protege#> .
+@prefix default:  <http://paginaspersonales.deusto.es/aitor.almeida/testInstances.owl#> .
+@prefix ambInt:  <http://paginaspersonales.deusto.es/aitor.almeida/ambientInterface.owl#> .
+@prefix xsp:     <http://www.owl-ontologies.com/2005/08/07/xsp.owl#> .
+@prefix swrlb:   <http://www.w3.org/2003/11/swrlb#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+default:buttonTest
+      rdf:type ambInt:Button ;
+      ambInt:action "open"^^xsd:string ;
+      ambInt:position "CENTER"^^xsd:string ;
+      ambInt:text "Button test"^^xsd:string .
+
+default:labelTest
+      rdf:type ambInt:Label ;
+      ambInt:position "TOP"^^xsd:string ;
+      ambInt:text "Test Label"^^xsd:string .
+
+<http://paginaspersonales.deusto.es/aitor.almeida/testInstances.owl>
+      rdf:type owl:Ontology ;
+      owl:imports <http://paginaspersonales.deusto.es/aitor.almeida/ambientInterface.owl> .
+
+default:interfaceTest
+      rdf:type ambInt:Interface ;
+      ambInt:composed_by default:buttonTest , default:labelTest ;
+      ambInt:endpoint "http://test.mytest.com"^^xsd:string ;
+      ambInt:title "Configuration Test"^^xsd:string .

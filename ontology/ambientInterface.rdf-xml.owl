@@ -1,130 +1,91 @@
-<?xml version="1.0"?>
-<rdf:RDF
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
-    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
-    xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
-    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-    xmlns="http://paginaspersonales.deusto.es/aitor.almeida/ambientInterface.owl#"
-  xml:base="http://paginaspersonales.deusto.es/aitor.almeida/ambientInterface.owl" > 
-  <rdf:Description rdf:about="#Slide">
-    <owl:disjointWith rdf:resource="#Controler"/>
-    <owl:disjointWith rdf:resource="#Button"/>
-    <owl:disjointWith rdf:resource="#Label"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="#Widget"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A0">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="A1"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#title">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:resource="#Interface"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#endpoint">
-    <rdfs:domain rdf:resource="#Interface"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Interface">
-    <owl:disjointWith rdf:resource="#Widget"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Label">
-    <rdfs:subClassOf rdf:resource="#Widget"/>
-    <owl:disjointWith rdf:resource="#Controler"/>
-    <owl:disjointWith rdf:resource="#Slide"/>
-    <owl:disjointWith rdf:resource="#Button"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#orientation">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:resource="#Slide"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#limitStart">
-    <rdfs:domain rdf:resource="#Slide"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#position">
-    <rdfs:domain rdf:resource="#Widget"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A2">
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-    <rdf:first rdf:resource="#Slide"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#limitEnd">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-    <rdfs:domain rdf:resource="#Slide"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Widget">
-    <owl:disjointWith rdf:resource="#Interface"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A3">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="A4"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#text">
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:nodeID="A3"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#action">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:domain rdf:nodeID="A0"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Controler">
-    <rdfs:subClassOf rdf:resource="#Widget"/>
-    <owl:disjointWith rdf:resource="#Slide"/>
-    <owl:disjointWith rdf:resource="#Button"/>
-    <owl:disjointWith rdf:resource="#Label"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A5">
-    <rdf:first rdf:resource="#Button"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A4">
-    <rdf:rest rdf:nodeID="A5"/>
-    <rdf:first rdf:resource="#Label"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A6">
-    <rdf:first rdf:resource="#Button"/>
-    <rdf:rest rdf:nodeID="A2"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="#Button">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:disjointWith rdf:resource="#Controler"/>
-    <owl:disjointWith rdf:resource="#Slide"/>
-    <owl:disjointWith rdf:resource="#Label"/>
-    <rdfs:subClassOf rdf:resource="#Widget"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="A1">
-    <rdf:rest rdf:nodeID="A6"/>
-    <rdf:first rdf:resource="#Label"/>
-  </rdf:Description>
-</rdf:RDF>
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl:    <http://www.w3.org/2003/11/swrl#> .
+@prefix default:  <http://paginaspersonales.deusto.es/aitor.almeida/ambientInterface.owl#> .
+@prefix protege:  <http://protege.stanford.edu/plugins/owl/protege#> .
+@prefix xsp:     <http://www.owl-ontologies.com/2005/08/07/xsp.owl#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix swrlb:   <http://www.w3.org/2003/11/swrlb#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
-<!-- Created with Protege (with OWL Plugin 3.4.4, Build 579)  http://protege.stanford.edu -->
+default:Slide
+      rdf:type owl:Class ;
+      rdfs:subClassOf default:Widget ;
+      owl:disjointWith default:Controler , default:Label , default:Button .
+
+default:title
+      rdf:type owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdfs:domain default:Interface ;
+      rdfs:range xsd:string .
+
+default:endpoint
+      rdf:type owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdfs:domain default:Interface ;
+      rdfs:range xsd:string .
+
+default:Interface
+      rdf:type owl:Class ;
+      owl:disjointWith default:Widget .
+
+default:Label
+      rdf:type owl:Class ;
+      rdfs:subClassOf default:Widget ;
+      owl:disjointWith default:Slide , default:Controler , default:Button .
+
+default:orientation
+      rdf:type owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdfs:domain default:Slide ;
+      rdfs:range xsd:string .
+
+default:limitStart
+      rdf:type owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdfs:domain default:Slide ;
+      rdfs:range xsd:float .
+
+default:position
+      rdf:type owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdfs:domain default:Widget ;
+      rdfs:range xsd:string .
+
+default:limitEnd
+      rdf:type owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdfs:domain default:Slide ;
+      rdfs:range xsd:float .
+
+<http://paginaspersonales.deusto.es/aitor.almeida/ambientInterface.owl>
+      rdf:type owl:Ontology .
+
+default:Widget
+      rdf:type owl:Class ;
+      owl:disjointWith default:Interface .
+
+default:text
+      rdf:type owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdfs:domain
+              [ rdf:type owl:Class ;
+                owl:unionOf (default:Label default:Button)
+              ] ;
+      rdfs:range xsd:string .
+
+default:composed_by
+      rdf:type owl:ObjectProperty ;
+      rdfs:domain default:Interface ;
+      rdfs:range default:Widget .
+
+default:action
+      rdf:type owl:FunctionalProperty , owl:DatatypeProperty ;
+      rdfs:domain
+              [ rdf:type owl:Class ;
+                owl:unionOf (default:Label default:Button default:Slide)
+              ] ;
+      rdfs:range xsd:string .
+
+default:Controler
+      rdf:type owl:Class ;
+      rdfs:subClassOf default:Widget ;
+      owl:disjointWith default:Slide , default:Label , default:Button .
+
+default:Button
+      rdf:type owl:Class ;
+      rdfs:subClassOf default:Widget ;
+      owl:disjointWith default:Slide , default:Controler , default:Label .

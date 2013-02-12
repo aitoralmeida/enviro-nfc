@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns="http://paginaspersonales.deusto.es/aitor.almeida/testInstances.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:ambInt="http://paginaspersonales.deusto.es/aitor.almeida/ambientInterface.owl#"
+  xml:base="http://paginaspersonales.deusto.es/aitor.almeida/testInstances.owl" > 
+  <rdf:Description rdf:about="#buttonTest">
+    <ambInt:action rdf:datatype="http://www.w3.org/2001/XMLSchema#string">open</ambInt:action>
+    <rdf:type rdf:resource="http://paginaspersonales.deusto.es/aitor.almeida/ambientInterface.owl#Button"/>
+    <ambInt:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Button test</ambInt:text>
+    <ambInt:position rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CENTER</ambInt:position>
+  </rdf:Description>
+  <rdf:Description rdf:about="#labelTest">
+    <rdf:type rdf:resource="http://paginaspersonales.deusto.es/aitor.almeida/ambientInterface.owl#Label"/>
+    <ambInt:text rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Test Label</ambInt:text>
+    <ambInt:position rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TOP</ambInt:position>
+  </rdf:Description>
+  <rdf:Description rdf:about="">
+    <owl:imports rdf:resource="http://paginaspersonales.deusto.es/aitor.almeida/ambientInterface.owl"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#interfaceTest">
+    <ambInt:composed_by rdf:resource="#buttonTest"/>
+    <ambInt:composed_by rdf:resource="#labelTest"/>
+    <ambInt:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Configuration Test</ambInt:title>
+    <rdf:type rdf:resource="http://paginaspersonales.deusto.es/aitor.almeida/ambientInterface.owl#Interface"/>
+    <ambInt:endpoint rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://test.mytest.com</ambInt:endpoint>
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4.4, Build 579)  http://protege.stanford.edu -->

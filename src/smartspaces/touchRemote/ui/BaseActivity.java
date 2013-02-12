@@ -10,18 +10,23 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-import android.widget.ListView;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.LinearLayout;
 
-public class BaseActivity extends Activity {
+public class BaseActivity extends Activity implements OnClickListener {
 	
-	private ListView baseView;
+	private LinearLayout baseLayout;
 	private InterfaceConfiguration config;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_base);
-        this.baseView = (ListView)this.findViewById(R.id.baseView);
+
+        this.baseLayout = new LinearLayout(this);
+        this.baseLayout.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));        
+        setContentView(this.baseLayout);
+        
         this.config = (InterfaceConfiguration) getIntent().getSerializableExtra(TouchActivity.INTERFACE_CONFIG);
         this.createInterface();
     }
@@ -34,30 +39,32 @@ public class BaseActivity extends Activity {
     
     
     public void createInterface(){
-    	    	
     	for (WidgetConfiguration widget : this.config.getWidgets()) {
 			if (widget.getType() == Types.LABEL) {
 				AmbientTextView label = new AmbientTextView(this);
+				label.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
 				label.setText(widget.getProperties().get(Properties.TEXT));
 				label.setAction(widget.getProperties().get(Properties.ACTION));
-				this.baseView.addView(label);
+				this.baseLayout.addView(label);
 			} else if (widget.getType() == Types.BUTTON) {
 				AmbientButton button = new AmbientButton(this);
+				button.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
 				button.setText(widget.getProperties().get(Properties.TEXT));
 				button.setAction(widget.getProperties().get(Properties.ACTION));
-				this.baseView.addView(button);
+				button.setOnClickListener(this);
+				this.baseLayout.addView(button);
 			}
-		}    	
+		}  	
     }
-    
-    public void performAction(View view) {
-    	if (view instanceof AmbientButton) {
-			AmbientButton button = (AmbientButton) view;
-			this.sendAction(button.getAction());
-		}    	
-    }
-    
+       
     private void sendAction(String action){
     	System.out.println(this.config.getEndPoint() + ":" + action);
     }
+
+	public void onClick(View view) {
+    	if (view instanceof AmbientButton) {
+			AmbientButton button = (AmbientButton) view;
+			this.sendAction(button.getAction());
+		}    		
+	}
 }

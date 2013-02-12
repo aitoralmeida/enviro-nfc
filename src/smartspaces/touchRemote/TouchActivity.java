@@ -36,17 +36,19 @@ public class TouchActivity extends Activity {
     public void showInterface(View view) {
     	
     	//JUST TESTING
+    	final Vector<WidgetConfiguration> widgets = new Vector<WidgetConfiguration>();
+    	
+    	//label
     	final HashMap<Properties, String> propertiesLabel = new HashMap<Properties, String>();
     	propertiesLabel.put(Properties.TEXT, "Test label");
     	final WidgetConfiguration labelTop = new WidgetConfiguration(Types.LABEL, propertiesLabel, Positions.TOP);
+    	widgets.add(labelTop);
     	
+    	//button
     	final HashMap<Properties, String> propertiesButton = new HashMap<Properties, String>();
     	propertiesButton.put(Properties.TEXT, "Test button");
     	propertiesButton.put(Properties.ACTION, "action button");
     	final WidgetConfiguration buttonMiddle = new WidgetConfiguration(Types.BUTTON, propertiesButton, Positions.CENTER);
-    	
-    	final Vector<WidgetConfiguration> widgets = new Vector<WidgetConfiguration>();
-    	widgets.add(labelTop);
     	widgets.add(buttonMiddle);
     	
 		this.config = new InterfaceConfiguration("test", "test view", widgets);

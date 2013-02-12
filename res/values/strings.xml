@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="app_name">TouchRemote</string>
+    <string name="control_button">Control</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="touch_label">Touch to control</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_touch">Appliance selection</string>
+    <string name="title_activity_base">BaseActivity</string>
+
+</resources>

@@ -3,6 +3,7 @@ package smartspaces.touchRemote;
 import java.util.HashMap;
 import java.util.Vector;
 
+import smartspaces.touchRemote.delete.TestActivity;
 import smartspaces.touchRemote.ui.BaseActivity;
 import smartspaces.touchRemote.ui.InterfaceConfiguration;
 import smartspaces.touchRemote.ui.WidgetConfiguration;

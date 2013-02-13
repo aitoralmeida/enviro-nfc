@@ -7,5 +7,6 @@
     <string name="menu_settings">Settings</string>
     <string name="title_activity_touch">Appliance selection</string>
     <string name="title_activity_base">BaseActivity</string>
+    <string name="title_activity_test">TestActivity</string>
 
 </resources>

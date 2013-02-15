@@ -1,4 +1,4 @@
-; Tue Feb 12 11:34:31 CET 2013
+; Thu Feb 14 08:10:09 CET 2013
 ; 
 ;+ (version "3.4.4")
 ;+ (build "Build 579")
@@ -6,11 +6,11 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[testIndividuals_ProjectKB_Class173]
-		[testIndividuals_ProjectKB_Class174]
-		[testIndividuals_ProjectKB_Class175]
-		[testIndividuals_ProjectKB_Class176]
-		[testIndividuals_ProjectKB_Class177]))
+		[testIndividuals_ProjectKB_Class178]
+		[testIndividuals_ProjectKB_Class179]
+		[testIndividuals_ProjectKB_Class180]
+		[testIndividuals_ProjectKB_Class181]
+		[testIndividuals_ProjectKB_Class182]))
 
 ([CLSES_TAB] of  Widget
 
@@ -755,7 +755,7 @@
 ([KB_444675_Instance_0] of  String
 
 	(name "SwitchableClassDefinitionType")
-	(string_value "edu.stanford.smi.protegex.owl.ui.cls.PropertiesClassDefinitionWidgetType"))
+	(string_value "edu.stanford.smi.protegex.owl.ui.cls.PropertiesClassDefinitionWidget"))
 
 ([KB_465546_Instance_567] of  Widget
 
@@ -5906,27 +5906,27 @@
 	(property_list [XY_Instance_725])
 	(widget_class_name "edu.stanford.smi.protege.widget.FormWidget"))
 
-([testIndividuals_ProjectKB_Class173] of  String
+([testIndividuals_ProjectKB_Class178] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([testIndividuals_ProjectKB_Class174] of  String
+([testIndividuals_ProjectKB_Class179] of  String
 
 	(name "http://www.w3.org/2002/07/owl#Class")
 	(string_value "%3ANAME"))
 
-([testIndividuals_ProjectKB_Class175] of  String
+([testIndividuals_ProjectKB_Class180] of  String
 
 	(name ":PAL-CONSTRAINT")
 	(string_value "%3APAL-NAME"))
 
-([testIndividuals_ProjectKB_Class176] of  String
+([testIndividuals_ProjectKB_Class181] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))
 
-([testIndividuals_ProjectKB_Class177] of  String
+([testIndividuals_ProjectKB_Class182] of  String
 
 	(name "http://www.w3.org/2002/07/owl#Thing")
 	(string_value "%3ANAME"))

@@ -38,15 +38,10 @@ public class NFCActivity extends Activity
 
 
 	private static final String NFCACTIVITY_DATATYPE = "text/plain";
-	
-    private boolean mResumed = false;
-    private boolean mWriteMode = false;
     
     NfcAdapter mNfcAdapter;
-    String message = "";
 
     PendingIntent mNfcPendingIntent;
-    IntentFilter[] mWriteTagFilters;
     IntentFilter[] mNdefExchangeFilters;
 
 
@@ -55,13 +50,6 @@ public class NFCActivity extends Activity
 			System.out.println("msg: " + new String(ndefMessage.getRecords()[0].getPayload()));
 		}
     }
-
- 	private NdefMessage getMessageAsNdef() {
-		byte[] textBytes = message.getBytes();
-		NdefRecord textRecord = new NdefRecord(NdefRecord.TNF_MIME_MEDIA,
-				NFCACTIVITY_DATATYPE.getBytes(), new byte[] {}, textBytes);
-		return new NdefMessage(new NdefRecord[] { textRecord });
-	}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,9 +68,6 @@ public class NFCActivity extends Activity
         } catch (MalformedMimeTypeException e) { }
         mNdefExchangeFilters = new IntentFilter[] { ndefDetected };
         
-        // Intent filters for writing to a tag
-        IntentFilter tagDetected = new IntentFilter(NfcAdapter.ACTION_TAG_DISCOVERED);
-        mWriteTagFilters = new IntentFilter[] { tagDetected };
     }
     
     @Override
@@ -94,16 +79,13 @@ public class NFCActivity extends Activity
             onTagReadEnd(messages);
             setIntent(new Intent()); // Consume this intent.
         }
-        if(mWriteMode){
-			disableTagWriteMode();
-        }
         enableNdefExchangeMode();
     }
     
     @Override
     protected void onNewIntent(Intent intent) {
     	// NDEF exchange mode
-    	if (!mWriteMode && NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intent.getAction())) {
+    	if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intent.getAction())) {
     		NdefMessage[] msgs = getNdefMessagesFromIntent(intent);
     		onTagReadEnd(msgs);
     	}
@@ -138,15 +120,9 @@ public class NFCActivity extends Activity
         return msgs;
     }
 
-    @SuppressWarnings("deprecation")
 	private void enableNdefExchangeMode() {
-        mNfcAdapter.enableForegroundNdefPush(NFCActivity.this, getMessageAsNdef());
-        mNfcAdapter.enableForegroundDispatch(this, mNfcPendingIntent, mNdefExchangeFilters, null);
+       mNfcAdapter.enableForegroundDispatch(this, mNfcPendingIntent, mNdefExchangeFilters, null);
     }
    
-    private void disableTagWriteMode() {
-        mWriteMode = false;
-        mNfcAdapter.disableForegroundDispatch(this);
-    }
     
 }

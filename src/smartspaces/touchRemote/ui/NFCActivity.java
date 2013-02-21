@@ -2,25 +2,18 @@ package smartspaces.touchRemote.ui;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.PendingIntent;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.os.Parcelable;
 
-@TargetApi(10)
 public class NFCActivity extends Activity
 {
 
    
     NfcAdapter mNfcAdapter;
-
-    //PendingIntent mNfcPendingIntent;
-    //IntentFilter[] mNdefExchangeFilters;
-
 
     public void onTagReadEnd(NdefMessage[] messages){ 
     	for (NdefMessage ndefMessage : messages) {
@@ -30,7 +23,7 @@ public class NFCActivity extends Activity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate(savedInstanceState);       
         
         mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
     }

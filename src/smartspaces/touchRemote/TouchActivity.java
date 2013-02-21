@@ -3,13 +3,14 @@ package smartspaces.touchRemote;
 import java.util.HashMap;
 import java.util.Vector;
 
-import smartspaces.touchRemote.delete.TestActivity;
 import smartspaces.touchRemote.ui.BaseActivity;
-import smartspaces.touchRemote.ui.InterfaceConfiguration;
-import smartspaces.touchRemote.ui.WidgetConfiguration;
-import smartspaces.touchRemote.ui.WidgetConfiguration.Positions;
-import smartspaces.touchRemote.ui.WidgetConfiguration.Properties;
-import smartspaces.touchRemote.ui.WidgetConfiguration.Types;
+import smartspaces.touchRemote.ui.NFCActivity;
+import smartspaces.touchRemote.ui.NFCWriteActivity;
+import smartspaces.touchRemote.ui.generation.InterfaceConfiguration;
+import smartspaces.touchRemote.ui.generation.WidgetConfiguration;
+import smartspaces.touchRemote.ui.generation.WidgetConfiguration.Positions;
+import smartspaces.touchRemote.ui.generation.WidgetConfiguration.Properties;
+import smartspaces.touchRemote.ui.generation.WidgetConfiguration.Types;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -36,6 +37,8 @@ public class TouchActivity extends Activity {
     
     public void showInterface(View view) {
     	
+    	/*
+    	// TEST Create UI from description
     	//JUST TESTING
     	final Vector<WidgetConfiguration> widgets = new Vector<WidgetConfiguration>();
     	
@@ -58,7 +61,19 @@ public class TouchActivity extends Activity {
 		Intent intent = new Intent(this, BaseActivity.class);
 		intent.putExtra(INTERFACE_CONFIG, this.config);
 		startActivity(intent);
+		*/
+    	
+    	
+    	
+    	//TEST READ NFC
+    	Intent intent = new Intent(this, NFCActivity.class);
+		startActivity(intent);
+		
+    	
+    	//TEST WRITE NFC
+    	//Intent intent = new Intent(this, NFCWriteActivity.class);
+		//startActivity(intent);
 
     }
-    
+      
 }

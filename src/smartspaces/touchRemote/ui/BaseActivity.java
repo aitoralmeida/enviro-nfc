@@ -2,10 +2,12 @@ package smartspaces.touchRemote.ui;
 
 import smartspaces.touchRemote.R;
 import smartspaces.touchRemote.TouchActivity;
-import smartspaces.touchRemote.ui.WidgetConfiguration.Properties;
-import smartspaces.touchRemote.ui.WidgetConfiguration.Types;
-import smartspaces.touchRemote.ui.widgets.AmbientButton;
-import smartspaces.touchRemote.ui.widgets.AmbientTextView;
+import smartspaces.touchRemote.ui.generation.InterfaceConfiguration;
+import smartspaces.touchRemote.ui.generation.WidgetConfiguration;
+import smartspaces.touchRemote.ui.generation.WidgetConfiguration.Properties;
+import smartspaces.touchRemote.ui.generation.WidgetConfiguration.Types;
+import smartspaces.touchRemote.ui.generation.widgets.AmbientButton;
+import smartspaces.touchRemote.ui.generation.widgets.AmbientTextView;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;

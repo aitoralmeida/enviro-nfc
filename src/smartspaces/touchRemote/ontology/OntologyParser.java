@@ -3,11 +3,11 @@
 
 package smartspaces.touchRemote.ontology;
 
-import smartspaces.touchRemote.ui.InterfaceConfiguration;
-import smartspaces.touchRemote.ui.WidgetConfiguration;
-import smartspaces.touchRemote.ui.WidgetConfiguration.Positions;
-import smartspaces.touchRemote.ui.WidgetConfiguration.Properties;
-import smartspaces.touchRemote.ui.WidgetConfiguration.Types;
+import smartspaces.touchRemote.ui.generation.InterfaceConfiguration;
+import smartspaces.touchRemote.ui.generation.WidgetConfiguration;
+import smartspaces.touchRemote.ui.generation.WidgetConfiguration.Positions;
+import smartspaces.touchRemote.ui.generation.WidgetConfiguration.Properties;
+import smartspaces.touchRemote.ui.generation.WidgetConfiguration.Types;
 
 public class OntologyParser {
 

@@ -1,48 +1,25 @@
 package smartspaces.touchRemote.ui;
 
-import smartspaces.touchRemote.R;
-import smartspaces.touchRemote.R.layout;
-import smartspaces.touchRemote.R.menu;
-import android.os.Bundle;
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.view.Menu;
-import java.io.IOException;
-
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.IntentFilter.MalformedMimeTypeException;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
-import android.nfc.Tag;
-import android.nfc.tech.Ndef;
-import android.nfc.tech.NdefFormatable;
+import android.os.Bundle;
 import android.os.Parcelable;
 
-
-
-
-//<uses-permission android:name="android.permission.NFC"/>
-//<activity android:name=".gui.NFCActivity">
-//    <intent-filter>
-//        <action android:name="android.nfc.action.NDEF_DISCOVERED" />
-//        <category android:name="android.intent.category.DEFAULT" />
-//        <data android:mimeType="*/*" />
-//    </intent-filter>
-//</activity>
 @TargetApi(10)
 public class NFCActivity extends Activity
 {
 
-
-	private static final String NFCACTIVITY_DATATYPE = "text/plain";
-    
+   
     NfcAdapter mNfcAdapter;
 
-    PendingIntent mNfcPendingIntent;
-    IntentFilter[] mNdefExchangeFilters;
+    //PendingIntent mNfcPendingIntent;
+    //IntentFilter[] mNdefExchangeFilters;
 
 
     public void onTagReadEnd(NdefMessage[] messages){ 
@@ -56,18 +33,6 @@ public class NFCActivity extends Activity
         super.onCreate(savedInstanceState);
         
         mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
-
-        // Handle all of our received NFC intents in this activity.
-        mNfcPendingIntent = PendingIntent.getActivity(this, 0,
-                new Intent(this, getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
-
-        // Intent filters for reading a note from a tag or exchanging over p2p.
-        IntentFilter ndefDetected = new IntentFilter(NfcAdapter.ACTION_NDEF_DISCOVERED);
-        try {
-            ndefDetected.addDataType(NFCACTIVITY_DATATYPE);
-        } catch (MalformedMimeTypeException e) { }
-        mNdefExchangeFilters = new IntentFilter[] { ndefDetected };
-        
     }
     
     @Override

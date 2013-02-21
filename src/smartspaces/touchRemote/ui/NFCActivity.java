@@ -79,7 +79,7 @@ public class NFCActivity extends Activity
             onTagReadEnd(messages);
             setIntent(new Intent()); // Consume this intent.
         }
-        enableNdefExchangeMode();
+        //enableNdefExchangeMode();
     }
     
     @Override
@@ -120,9 +120,9 @@ public class NFCActivity extends Activity
         return msgs;
     }
 
-	private void enableNdefExchangeMode() {
+	/*private void enableNdefExchangeMode() {
        mNfcAdapter.enableForegroundDispatch(this, mNfcPendingIntent, mNdefExchangeFilters, null);
-    }
+    }*/
    
     
 }

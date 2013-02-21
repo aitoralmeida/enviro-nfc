@@ -79,16 +79,6 @@ public class NFCActivity extends Activity
             onTagReadEnd(messages);
             setIntent(new Intent()); // Consume this intent.
         }
-        //enableNdefExchangeMode();
-    }
-    
-    @Override
-    protected void onNewIntent(Intent intent) {
-    	// NDEF exchange mode
-    	if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(intent.getAction())) {
-    		NdefMessage[] msgs = getNdefMessagesFromIntent(intent);
-    		onTagReadEnd(msgs);
-    	}
     }
 
 	NdefMessage[] getNdefMessagesFromIntent(Intent intent) {
@@ -118,11 +108,6 @@ public class NFCActivity extends Activity
             finish();
         }
         return msgs;
-    }
-
-	/*private void enableNdefExchangeMode() {
-       mNfcAdapter.enableForegroundDispatch(this, mNfcPendingIntent, mNdefExchangeFilters, null);
-    }*/
-   
+    }   
     
 }
